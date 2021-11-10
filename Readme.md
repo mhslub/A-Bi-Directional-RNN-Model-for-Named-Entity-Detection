@@ -3,10 +3,6 @@ Named-entity recognition is the task of identifying the segments and classes of 
 In this implementation, a bi-directional Recurrent Neural Network (RNN) more specifically a bi-directional Long short-term memory (Bi-LSTM) model is used for the task of detecting first and second level named-entities i.e., nested named-entities in German text.
 
 
-**Table of Contents**
-
-[TOC]
-
 ## The dataset
 This implementation uses the GermEval 2014 NER dataset which consists of 31,000 sentences annotated with 12 main classes as described in [1]. The dataset also includes the annotations of nested named-entities found within the first level named-entities such as (ORG) [[(LOC)California] Institute of Technology]. The dataset is divided into three files: training, development and testing with 24,000, 2,000, and 5,000 sentences respectively.
 
@@ -26,7 +22,7 @@ The used model is a many to many bi-directional LSTM (bi-LSTM) that takes as inp
 Each input token is represented by two values. The first is the token’s unique integer number i.e., its index in the vocabulary list and the second is the index of the previous level target label. The previous target labels for the first level are all set to ‘O’, whereas the previous targets for the second level (nested named-entities) are set to the output labels of the first level. In the proposed model, both the input and embedding layers are split into two parts each. The first part is to process the input words and the second is to process the previous level labels of the input words. The word embeddings are loaded from the word embedding matrix for each embedding vector, whereas target embeddings are set to one-hot vector representations of the target labels with length 26 each. Figure 1 shows the architecture of the proposed model with a maximum input sequence of length 56 (the longest sentence in the training dataset). 
 
 <p align="center">
-<img width="200" src="model_bi_lstm/model_plot.png" alt="The architecture of the proposed model">
+<img width="100%" src="model_bi_lstm/model_plot.png" alt="The architecture of the proposed model">
 
 Figure 1: The architecture of the proposed model.
 </p>
@@ -37,7 +33,7 @@ As figure 1 shows, the bi-LSTM layer produces two outputs for each input sequenc
 The model is trained separately for each level named-entities. For the first level, the model is trained using the input sentences in the training dataset and fixed pre-first level label all set to ‘O’. The model is trained on a batch size of length 128 for 15 epochs. For the second level training, the input sentences as well as the output labels of the first level extracted from the training dataset are used as input to train the model. Similar to the first level training, a batch size of 128 is used for the second level training. However, since the model has much less to learn in the second level as the number of nested named-entities is much smaller, 7 epochs were found to be sufficient enough for the second level training. To avoid overfitting, a dropout of 0.2 was used in the training of the bi-LSTM layer for both forward and recurrent states. The model was trained using the Adam optimizer and the categorical cross-entropy loss function. 
 
 ## The Results and possible improvements
-The GermEval 2014 NER evaluation plan described in [a relative link](Evaluation/evaluation.pdf) was used to evaluate the trained model using the test dataset. Table 1 shows the results of all evaluation metrics provided by the evaluation script from the GermEval 2014 Shared Task. For full details [a relative link](evaluation_test_dataset.txt).
+[The GermEval 2014 NER evaluation plan](Evaluation/evaluation.pdf) was used to evaluate the trained model using the test dataset. Table 1 shows the results of all evaluation metrics provided by the evaluation script from the GermEval 2014 Shared Task. For full details [click here](Evaluation/evaluation_test_dataset.txt).
 <p align="center">
 Table 1: The evaluation results of the proposed model using the GermEval 2014 NER evaluation plan metrics.
 </p>
