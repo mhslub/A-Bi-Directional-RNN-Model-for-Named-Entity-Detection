@@ -1,0 +1,87 @@
+STRICT: Found: 3835 outer and 257 inner phrases; Gold: 6178 (outer) and 515 (inner).
+LOOSE: Found: 3835 outer and 257 inner phrases; Gold: 6178 (outer) and 515 (inner).
+
+1. Strict, Combined Evaluation (official):
+Accuracy:  97.12%;
+Precision:  70.23%;
+Recall:  42.94%;
+FB1:  53.30
+
+2. Loose, Combined Evaluation:
+Accuracy:  97.15%;
+Precision:  71.24%;
+Recall:  43.55%;
+FB1:  54.06
+
+3.1 Per-Level Evaluation (outer chunks):
+Accuracy:  94.64%;
+Precision:  69.88%;
+Recall:  43.38%;
+FB1:  53.53
+
+3.2 Per-Level Global Evaluation (inner chunks):
+Accuracy:  99.59%;
+Precision:  75.49%;
+Recall:  37.67%;
+FB1:  50.26
+
+
+Evaluation per type and mode:
+=============================
+
+==>        LOC
+==============
+Outer strict: Precision:  81.03%; Recall:  54.57%; FB1:  65.22
+Inner strict: Precision:  84.11%; Recall:  42.86%; FB1:  56.78
+Outer loose: Precision:  81.47%; Recall:  56.82%; FB1:  66.95
+Inner loose: Precision:  84.38%; Recall:  50.53%; FB1:  63.21
+==>   LOCderiv
+==============
+Outer strict: Precision:  78.59%; Recall:  69.34%; FB1:  73.67
+Inner strict: Precision:  83.76%; Recall:  61.64%; FB1:  71.01
+==>    LOCpart
+==============
+Outer strict: Precision:  69.23%; Recall:   8.26%; FB1:  14.75
+Inner strict: Precision:   0.00%; Recall:   0.00%; FB1:   0.00
+==>        ORG
+==============
+Outer strict: Precision:  61.44%; Recall:  37.13%; FB1:  46.29
+Inner strict: Precision:  62.50%; Recall:  12.20%; FB1:  20.41
+Outer loose: Precision:  62.29%; Recall:  33.53%; FB1:  43.60
+Inner loose: Precision:  62.50%; Recall:  11.63%; FB1:  19.61
+==>   ORGderiv
+==============
+Outer strict: Precision:   0.00%; Recall:   0.00%; FB1:   0.00
+Inner strict: Precision:   0.00%; Recall:   0.00%; FB1:   0.00
+==>    ORGpart
+==============
+Outer strict: Precision:  52.38%; Recall:   6.40%; FB1:  11.40
+Inner strict: Precision:   0.00%; Recall:   0.00%; FB1:   0.00
+==>        OTH
+==============
+Outer strict: Precision:  54.17%; Recall:  29.84%; FB1:  38.48
+Inner strict: Precision:   0.00%; Recall:   0.00%; FB1:   0.00
+Outer loose: Precision:  57.21%; Recall:  29.56%; FB1:  38.98
+Inner loose: Precision:   0.00%; Recall:   0.00%; FB1:   0.00
+==>   OTHderiv
+==============
+Outer strict: Precision:  61.11%; Recall:  28.21%; FB1:  38.60
+Inner strict: Precision:   0.00%; Recall:   0.00%; FB1:   0.00
+==>    OTHpart
+==============
+Outer strict: Precision:   0.00%; Recall:   0.00%; FB1:   0.00
+Inner strict: Precision:   0.00%; Recall:   0.00%; FB1:   0.00
+==>        PER
+==============
+Outer strict: Precision:  65.47%; Recall:  42.34%; FB1:  51.43
+Inner strict: Precision:   4.00%; Recall:   1.22%; FB1:   1.87
+Outer loose: Precision:  65.47%; Recall:  40.97%; FB1:  50.40
+Inner loose: Precision:   4.00%; Recall:   1.11%; FB1:   1.74
+==>   PERderiv
+==============
+Outer strict: Precision:   0.00%; Recall:   0.00%; FB1:   0.00
+Inner strict: Precision:   0.00%; Recall:   0.00%; FB1:   0.00
+==>    PERpart
+==============
+Outer strict: Precision:   0.00%; Recall:   0.00%; FB1:   0.00
+Inner strict: Precision:   0.00%; Recall:   0.00%; FB1:   0.00
