@@ -24,7 +24,7 @@ Each input token is represented by two values. The first is the token’s unique
 <p align="center">
 <img width="100%" src="model_bi_lstm/model_plot.png" alt="The architecture of the proposed model">
 
-Figure 1: The architecture of the proposed model.
+<p>Figure 1: The architecture of the proposed model.</p>
 </p>
 
 As figure 1 shows, the bi-LSTM layer produces two outputs for each input sequence i.e., forward and backward outputs. Each output has a length of 100 which is the same as the number of hidden units in the layer. These two outputs are concatenated and passed to the output layer as a single vector of length 200. The output layer will apply softmax activation on its input and produces probability distributions for every token in the input sequences.  
